@@ -1,0 +1,60 @@
+<!-- Colorful bricks -->
+
+<button (click)="toggleBricks()">klik miiiiig</button>
+<div class="moveDiv" [ngClass]="{ D1in: showBricks, D1out: !showBricks }"></div>
+<div
+  class="D4in moveDiv"
+  id="test"
+  [ngClass]="{ D4in: showBricks, D4out: !showBricks }"
+>
+  <div id="textarea">
+    <div
+      *ngFor="let text of textInD4"
+      id="text"
+      [ngClass]="{
+        trueLink: text.link,
+        falseLink: !text.link
+      }"
+    >
+      {{ text.text }}&nbsp;
+    </div>
+  </div>
+</div>
+
+<div class="moveDiv" [ngClass]="{ D3in: showBricks, D3out: !showBricks }"></div>
+<div class="moveDiv" [ngClass]="{ D2in: showBricks, D2out: !showBricks }"></div>
+<div
+  class="moveDiv"
+  [ngClass]="{ D3Bin: showBricks, D3Bout: !showBricks }"
+></div>
+<div
+  class="moveDiv"
+  [ngClass]="{ D2Bin: showBricks, D2Bout: !showBricks }"
+></div>
+<div
+  class="moveDiv"
+  [ngClass]="{ D1Bin: showBricks, D1Bout: !showBricks }"
+></div>
+<div
+  class="moveDiv"
+  [ngClass]="{ D1Cin: showBricks, D1Cout: !showBricks }"
+></div>
+<div
+  class="moveDiv"
+  [ngClass]="{ D1Din: showBricks, D1Dout: !showBricks }"
+></div>
+<div class="moveDiv" [ngClass]="{ nameIn: showBricks, nameOut: !showBricks }">
+  .RebeckaElisabethThyssen
+</div>
+<div class="content" [@showHide]="showBricks ? 'show' : 'hide'">
+  <div class="content__container">
+    <p class="content__container__text">just-another:</p>
+
+    <ul class="content__container__list">
+      <li class="content__container__list__item">frontend-lover;</li>
+      <li class="content__container__list__item">UI/UX-enthusiast;</li>
+      <li class="content__container__list__item">CSS-addict;</li>
+      <li class="content__container__list__item">nerd;</li>
+    </ul>
+  </div>
+</div>

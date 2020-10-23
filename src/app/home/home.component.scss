@@ -1,0 +1,416 @@
+/* The animation of bricks and my name have been made with pure, oldschool CSS. This due to the fact
+that I was about to lose my shit over Angulars half-broken transition-animations, making it more crappy than useful. 
+In the following, a div is animated when transitioning from one class to another, hence the in/out-naming. In the 
+bottom of this CSS-file, a simple .move-class binds the classes together, making them shift between states. 
+The "just another..."-div has been animated with Angular though, since opacity animation works quite well, and
+by animating this way, less CSS can be written here. */
+
+///// Colorful bricks and their movements /////
+
+.D1in {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(30% 0, 40% 0, 70% 100%, 60% 100%);
+  top: -16.7%;
+  left: 0%;
+}
+
+.D1out {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(30% 0, 20% 0, 50% 100%, 60% 100%);
+  top: -100%;
+  left: -25%;
+}
+
+.D4out {
+  width: 140%;
+  height: 100%;
+  background: #752cb5;
+  position: absolute;
+  clip-path: polygon(65% 0, 100% 0%, 100% 100%, 100% 50%);
+  bottom: 100%;
+  left: 20%;
+  text-align: center;
+}
+
+.D4in {
+  width: 140%;
+  height: 100%;
+  background: #752cb5;
+  position: absolute;
+  clip-path: polygon(65% 0, 100% 0%, 100% 100%, 35% 100%);
+  bottom: 0%;
+  left: -20%;
+  text-align: center;
+}
+
+#textarea {
+  margin-top: 10px;
+  width: 70%;
+  margin-left: auto;
+  animation: moveText 70s linear infinite alternate;
+}
+
+#text {
+  font-size: 75px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+@keyframes moveText {
+  0% {
+    margin-left: 20%;
+  }
+  100% {
+    margin-left: 35%;
+  }
+}
+
+// #text:hover {
+//   color: red;
+// }
+
+.test {
+  color: red;
+  opacity: 0;
+}
+
+.falseLink {
+  opacity: 0.2;
+}
+
+.trueLink {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.trueLink:hover {
+  color: transparent;
+  position: relative;
+  opacity: 0;
+  animation: fadein 1s forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.trueLink:hover:before {
+  content: "enter   ";
+  font-size: 70px;
+  color: white;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.trueLink:hover:after {
+  content: "🠊";
+  font-size: 60px;
+  color: white;
+  position: absolute;
+  left: 180px;
+  top: 5px;
+  animation: arrow 1s ease-in-out infinite alternate;
+}
+
+@keyframes arrow {
+  0% {
+    color: #d7bdef;
+    left: 180px;
+  }
+
+  50% {
+    color: #934ad3;
+  }
+
+  100% {
+    color: #ebdef7;
+    left: 200px;
+  }
+}
+
+.D3in {
+  width: 100%;
+  height: 100%;
+  background: #934ad3;
+  position: absolute;
+  clip-path: polygon(90% 0, 100% 0, 85% 50%, 80% 33.7%);
+  left: -25.1%;
+  top: 0%;
+}
+
+.D3out {
+  width: 100%;
+  height: 100%;
+  background: #934ad3;
+  position: absolute;
+  clip-path: polygon(90% 0, 100% 0, 85% 50%, 75% 50%);
+  left: -10%;
+  top: -50%;
+}
+
+.D2in {
+  width: 100%;
+  height: 100%;
+  background: #a76bdb;
+  position: absolute;
+  clip-path: polygon(50% 20%, 45% 36.5%, 55% 36.5%);
+  left: 5%;
+  bottom: -13.4%;
+}
+
+.D2out {
+  width: 100%;
+  height: 100%;
+  background: #a76bdb;
+  position: absolute;
+  clip-path: polygon(50% 50%, 45% 37%, 55% 37%);
+  left: 5%;
+  bottom: -80%;
+}
+
+.D3Bin {
+  width: 100%;
+  height: 100%;
+  background: #934ad3;
+  position: absolute;
+  clip-path: polygon(31% 32%, 36% 15%, 51% 65%, 40% 65%);
+  left: 14%;
+  top: 35%;
+}
+
+.D3Bout {
+  width: 100%;
+  height: 100%;
+  background: #934ad3;
+  position: absolute;
+  clip-path: polygon(31% 20%, 36% 15%, 51% 65%, 40% 65%);
+  left: 29%;
+  top: 87%;
+}
+
+.D2Bin {
+  width: 20%;
+  height: 20%;
+  background: #a76bdb;
+  position: absolute;
+  clip-path: polygon(50% 85%, 25% 0%, 75% 0%);
+  left: 35%;
+  top: 50%;
+}
+
+.D2Bout {
+  width: 20%;
+  height: 20%;
+  background: #a76bdb;
+  position: absolute;
+  clip-path: polygon(50% 0%, 25% 0%, 75% 0%);
+  left: 35%;
+  top: -20%;
+}
+
+.D1Bin {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(90% 0%, 95% 17%, 85.1% 49.9%, 74% 50%);
+  left: -50%;
+  top: 50%;
+}
+
+.D1Bout {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(90% 40%, 95% 17%, 85.1% 49.9%, 74% 50%);
+  left: -65%;
+  top: 100%;
+}
+
+.D1Cin {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(36% 35%, 38% 35%, 51% 78%, 49% 78%);
+  left: -7%;
+  top: -35%;
+}
+
+.D1Cout {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(36% 35%, 38% 35%, 51% 78%, 49% 78%);
+  left: 33%;
+  top: 70%;
+}
+
+.D1Din {
+  width: 100%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(38% 37%, 40% 37%, 59% 100%, 57% 100%);
+  top: 19%;
+  left: 17.6%;
+}
+
+.D1Dout {
+  width: 200%;
+  height: 100%;
+  background: #bb8ce3;
+  position: absolute;
+  clip-path: polygon(38% 37%, 40% 37%, 59% 100%, 57% 100%);
+  top: -102%;
+  left: -49%;
+}
+
+// name
+
+.nameIn {
+  font-size: 5vh;
+  letter-spacing: 2px;
+  margin: 0 0 -13px 0;
+  position: absolute;
+  width: 34.5%;
+  left: 14%;
+  top: 42.6%;
+  text-shadow: 2px 2px #752cb5;
+  font-family: "Carrois Gothic SC", sans-serif;
+}
+
+.nameOut {
+  font-size: 70vh;
+  letter-spacing: 2px;
+  margin: 0 0 -13px 0;
+  position: absolute;
+  width: 34.5%;
+  left: -520%;
+  top: 26%;
+  text-shadow: 12px 12px #752cb5;
+  font-family: "Carrois Gothic SC", sans-serif;
+}
+
+// ** MAGIC HAPPENS HERE ** //
+
+.moveDiv {
+  transition: all 3s ease-in-out;
+}
+
+////// Just another ... //////
+
+.content {
+  position: absolute;
+  line-height: 40px;
+  width: 22%;
+  left: 14%;
+  top: 52%;
+
+  &__container {
+    overflow: hidden;
+    height: 40px;
+    padding: 2px 18px;
+
+    &:before {
+      content: "{";
+      left: 0%;
+    }
+
+    &:after {
+      content: "}";
+      position: absolute;
+      right: 75px;
+    }
+
+    &:after,
+    &:before {
+      position: absolute;
+      top: 0;
+      color: #934ad3;
+      font-size: 7vh;
+      line-height: 40px;
+
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    &__text {
+      display: inline;
+      float: left;
+      margin-left: 5%;
+    }
+
+    &__list {
+      margin-top: 0;
+      padding-left: 145px;
+      text-align: left;
+      list-style: none;
+      color: #cdadeb;
+      animation-name: change;
+      animation-delay: 1.5s;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+
+      &__item {
+        line-height: 40px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@keyframes opacity {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes change {
+  0%,
+  12.66%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%,
+  29.32% {
+    transform: translate3d(0, -25%, 0);
+  }
+  33.32%,
+  45.98% {
+    transform: translate3d(0, -50%, 0);
+  }
+  49.98%,
+  62.64% {
+    transform: translate3d(0, -75%, 0);
+  }
+  66.64%,
+  79.3% {
+    transform: translate3d(0, -50%, 0);
+  }
+  83.3%,
+  95.96% {
+    transform: translate3d(0, -25%, 0);
+  }
+}
