@@ -2,6 +2,9 @@
 that I was about to lose my shit over Angulars half-broken transition-animations, making it more crappy than useful. 
 In the following, a div is animated when transitioning from one class to another, hence the in/out-naming. In the 
 bottom of this CSS-file, a simple .move-class binds the classes together, making them shift between states. 
+** EDIT ** Using the above method requires 0 delay to the transition. In my case, I'd like to wait 3 sec before
+bricks fade in, but fade out immediately. This means I can't use the same "moveDiv"-class, so every class now has
+their own individual transition styling.
 The "just another..."-div has been animated with Angular though, since opacity animation works quite well, and
 by animating this way, less CSS can be written here. */
 
@@ -15,6 +18,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(30% 0, 40% 0, 70% 100%, 60% 100%);
   top: -16.7%;
   left: 0%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D1out {
@@ -25,6 +29,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(30% 0, 20% 0, 50% 100%, 60% 100%);
   top: -100%;
   left: -25%;
+  transition: all 3s ease-in-out;
 }
 
 .D4out {
@@ -36,6 +41,7 @@ by animating this way, less CSS can be written here. */
   bottom: 100%;
   left: 20%;
   text-align: center;
+  transition: all 3s ease-in-out;
 }
 
 .D4in {
@@ -47,6 +53,7 @@ by animating this way, less CSS can be written here. */
   bottom: 0%;
   left: -20%;
   text-align: center;
+  transition: all 3s 4s ease-in-out;
 }
 
 #textarea {
@@ -57,9 +64,10 @@ by animating this way, less CSS can be written here. */
 }
 
 #text {
-  font-size: 75px;
-  line-height: 65px;
+  font-size: 65px;
+  line-height: 53px;
   display: inline-block;
+  letter-spacing: -3px;
 }
 
 @keyframes moveText {
@@ -69,15 +77,6 @@ by animating this way, less CSS can be written here. */
   100% {
     margin-left: 35%;
   }
-}
-
-// #text:hover {
-//   color: red;
-// }
-
-.test {
-  color: red;
-  opacity: 0;
 }
 
 .falseLink {
@@ -109,7 +108,7 @@ by animating this way, less CSS can be written here. */
 
 .trueLink:hover:before {
   content: "enter   ";
-  font-size: 70px;
+  font-size: 65px;
   color: white;
   position: absolute;
   left: 0px;
@@ -121,7 +120,7 @@ by animating this way, less CSS can be written here. */
   font-size: 60px;
   color: white;
   position: absolute;
-  left: 180px;
+  //left: 100px;
   top: 5px;
   animation: arrow 1s ease-in-out infinite alternate;
 }
@@ -129,7 +128,7 @@ by animating this way, less CSS can be written here. */
 @keyframes arrow {
   0% {
     color: #d7bdef;
-    left: 180px;
+    left: 147px;
   }
 
   50% {
@@ -138,7 +137,7 @@ by animating this way, less CSS can be written here. */
 
   100% {
     color: #ebdef7;
-    left: 200px;
+    left: 156px;
   }
 }
 
@@ -150,6 +149,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(90% 0, 100% 0, 85% 50%, 80% 33.7%);
   left: -25.1%;
   top: 0%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D3out {
@@ -160,6 +160,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(90% 0, 100% 0, 85% 50%, 75% 50%);
   left: -10%;
   top: -50%;
+  transition: all 3s ease-in-out;
 }
 
 .D2in {
@@ -170,6 +171,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(50% 20%, 45% 36.5%, 55% 36.5%);
   left: 5%;
   bottom: -13.4%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D2out {
@@ -180,6 +182,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(50% 50%, 45% 37%, 55% 37%);
   left: 5%;
   bottom: -80%;
+  transition: all 3s ease-in-out;
 }
 
 .D3Bin {
@@ -190,6 +193,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(31% 32%, 36% 15%, 51% 65%, 40% 65%);
   left: 14%;
   top: 35%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D3Bout {
@@ -200,6 +204,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(31% 20%, 36% 15%, 51% 65%, 40% 65%);
   left: 29%;
   top: 87%;
+  transition: all 3s ease-in-out;
 }
 
 .D2Bin {
@@ -210,6 +215,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(50% 85%, 25% 0%, 75% 0%);
   left: 35%;
   top: 50%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D2Bout {
@@ -220,6 +226,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(50% 0%, 25% 0%, 75% 0%);
   left: 35%;
   top: -20%;
+  transition: all 3s ease-in-out;
 }
 
 .D1Bin {
@@ -230,6 +237,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(90% 0%, 95% 17%, 85.1% 49.9%, 74% 50%);
   left: -50%;
   top: 50%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D1Bout {
@@ -240,6 +248,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(90% 40%, 95% 17%, 85.1% 49.9%, 74% 50%);
   left: -65%;
   top: 100%;
+  transition: all 3s ease-in-out;
 }
 
 .D1Cin {
@@ -250,6 +259,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(36% 35%, 38% 35%, 51% 78%, 49% 78%);
   left: -7%;
   top: -35%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D1Cout {
@@ -258,8 +268,9 @@ by animating this way, less CSS can be written here. */
   background: #bb8ce3;
   position: absolute;
   clip-path: polygon(36% 35%, 38% 35%, 51% 78%, 49% 78%);
-  left: 33%;
-  top: 70%;
+  left: -20%;
+  top: -80%;
+  transition: all 3s ease-in-out;
 }
 
 .D1Din {
@@ -270,6 +281,7 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(38% 37%, 40% 37%, 59% 100%, 57% 100%);
   top: 19%;
   left: 17.6%;
+  transition: all 3s 4s ease-in-out;
 }
 
 .D1Dout {
@@ -280,92 +292,158 @@ by animating this way, less CSS can be written here. */
   clip-path: polygon(38% 37%, 40% 37%, 59% 100%, 57% 100%);
   top: -102%;
   left: -49%;
+  transition: all 3s ease-in-out;
 }
 
 // name
 
-.nameIn {
-  font-size: 5vh;
-  letter-spacing: 2px;
-  margin: 0 0 -13px 0;
-  position: absolute;
-  width: 34.5%;
-  left: 14%;
-  top: 42.6%;
-  text-shadow: 2px 2px #752cb5;
-  font-family: "Carrois Gothic SC", sans-serif;
+// .nameIn {
+//   font-size: 5vh;
+//   letter-spacing: 2px;
+//   margin: 0 0 -13px 0;
+//   position: absolute;
+//   width: 34.5%;
+//   left: 14%;
+//   top: 42.6%;
+//   text-shadow: 2px 2px #752cb5;
+//   //font-family: "Carrois Gothic SC", sans-serif;
+// }
+
+// .nameOut {
+//   font-size: 70vh;
+//   letter-spacing: 2px;
+//   margin: 0 0 -13px 0;
+//   position: absolute;
+//   width: 34.5%;
+//   left: -520%;
+//   top: 26%;
+//   text-shadow: 12px 12px #752cb5;
+//   font-family: "Carrois Gothic SC", sans-serif;
+// }
+
+.fullName {
+  position: relative;
+  left: -23%;
+  bottom: -3%;
+  font-size: 13.4vw;
+  line-height: 225%;
+  letter-spacing: -18px;
+  transform: rotate(-90deg);
+  text-align: center;
+  height: 100%;
+  animation: squeeze 2s 3s ease-in-out forwards;
 }
 
-.nameOut {
-  font-size: 70vh;
-  letter-spacing: 2px;
-  margin: 0 0 -13px 0;
-  position: absolute;
-  width: 34.5%;
-  left: -520%;
-  top: 26%;
-  text-shadow: 12px 12px #752cb5;
-  font-family: "Carrois Gothic SC", sans-serif;
+.fullNameOut {
+  position: relative;
+  left: -60%;
+  bottom: -3%;
+  font-size: 13.4vw;
+  line-height: 62%;
+  letter-spacing: -18px;
+  transform: rotate(-90deg);
+  text-align: center;
+  height: 100%;
+  transition: all 3s ease-in-out;
+}
+
+#firstName {
+  animation: dropDown 1.5s ease-in-out forwards;
+  margin-right: -100%;
+  //font-size: 0vw;
+}
+
+#middleName {
+  animation: dropDown 1.5s 0.5s ease-in-out forwards;
+  margin-right: -100%;
+  //font-size: 0vw;
+}
+
+#lastName {
+  animation: dropDown 1.5s 1s ease-in-out forwards;
+  margin-right: -100%;
+  //font-size: 0vw;
+}
+
+@keyframes dropDown {
+  0% {
+    //font-size: 0px;
+    margin-right: -100%;
+  }
+
+  100% {
+    //font-size: 13.4vw;
+    margin-right: 0%;
+  }
+}
+
+@keyframes squeeze {
+  0% {
+    line-height: 225%;
+  }
+
+  100% {
+    line-height: 62%;
+  }
 }
 
 // ** MAGIC HAPPENS HERE ** //
 
 .moveDiv {
-  transition: all 3s ease-in-out;
+  //transition: all 3s ease-in-out;
 }
 
 ////// Just another ... //////
-
 .content {
   position: absolute;
   line-height: 40px;
-  width: 22%;
-  left: 14%;
-  top: 52%;
+  width: 23%;
+  left: 5%;
+  top: 0%;
 
   &__container {
     overflow: hidden;
     height: 40px;
     padding: 2px 18px;
 
-    &:before {
-      content: "{";
-      left: 0%;
-    }
+    // &:before {
+    //   content: "{";
+    //   left: 0%;
+    // }
 
-    &:after {
-      content: "}";
-      position: absolute;
-      right: 75px;
-    }
+    // &:after {
+    //   content: "}";
+    //   position: absolute;
+    //   right: 75px;
+    // }
 
-    &:after,
-    &:before {
-      position: absolute;
-      top: 0;
-      color: #934ad3;
-      font-size: 7vh;
-      line-height: 40px;
+    // &:after,
+    // &:before {
+    //   position: absolute;
+    //   top: 0;
+    //   color: #934ad3;
+    //   font-size: 7vh;
+    //   line-height: 40px;
 
-      animation-name: opacity;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-    }
+    //   animation-name: opacity;
+    //   animation-duration: 2s;
+    //   animation-iteration-count: infinite;
+    // }
 
     &__text {
       display: inline;
       float: left;
-      margin-left: 5%;
+      margin-left: 21px;
     }
 
     &__list {
       margin-top: 0;
-      padding-left: 145px;
+      padding-left: 142px;
       text-align: left;
       list-style: none;
       color: #cdadeb;
       animation-name: change;
-      animation-delay: 1.5s;
+      animation-delay: 3s;
       animation-duration: 10s;
       animation-iteration-count: infinite;
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { fadeAnimation } from "../animations/animations";
 
 @Component({
@@ -8,7 +9,7 @@ import { fadeAnimation } from "../animations/animations";
   animations: [fadeAnimation],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   showBricks: boolean = false;
   textInD4 = [];
@@ -37,7 +38,8 @@ export class HomeComponent implements OnInit {
       { text: "</code♥>", link: false },
       { text: "<enter>", link: true },
     ];
-    for (let i = 0; i < 110; i++) {
+    // generate random word from array and push to
+    for (let i = 0; i < 170; i++) {
       let randomPick = Math.floor(Math.random() * ranTextArray.length);
       this.textInD4.push(ranTextArray[randomPick]);
     }
@@ -45,8 +47,10 @@ export class HomeComponent implements OnInit {
 
   route(link) {
     if (link) {
+      this.toggleBricks();
+      // wait for animation to finish before routing to new page
       setTimeout(() => {
-        // route to other site
+        this.router.navigate(["/about"]);
       }, 3000);
     }
   }

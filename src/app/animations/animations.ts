@@ -25,5 +25,5 @@ export const fadeAnimation = trigger("showHide", [
   ),
   // animate(time - delay - fadein/out-type)
   transition("show => *", [animate("0.6s ease")]),
-  transition("* => show", [animate("2s 2.8s ease")]),
+  transition("* => show", [animate("3s 6s ease")]),
 ]);
