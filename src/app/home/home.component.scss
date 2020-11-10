@@ -37,9 +37,9 @@ by animating this way, less CSS can be written here. */
   height: 100%;
   background: #752cb5;
   position: absolute;
-  clip-path: polygon(65% 0, 100% 0%, 100% 100%, 100% 50%);
-  bottom: 100%;
-  left: 20%;
+  clip-path: polygon(61% 0, 100% 0%, 100% 100%, 39% 100%);
+  top: 100%;
+  left: 0%;
   text-align: center;
   transition: all 3s ease-in-out;
 }
@@ -49,8 +49,8 @@ by animating this way, less CSS can be written here. */
   height: 100%;
   background: #752cb5;
   position: absolute;
-  clip-path: polygon(65% 0, 100% 0%, 100% 100%, 35% 100%);
-  bottom: 0%;
+  clip-path: polygon(61% 0, 100% 0%, 100% 100%, 39% 100%);
+  top: 0%;
   left: -20%;
   text-align: center;
   transition: all 3s 4s ease-in-out;
