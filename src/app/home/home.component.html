@@ -1,4 +1,7 @@
-<div class="content" [@showHide]="showBricks ? 'show' : 'hide'">
+<div
+  class="content"
+  [@showHide]="{ value: showBricks ? 'show' : 'hide', params: { delay: 6 } }"
+>
   <!-- <div class="content"> -->
   <div class="content__container">
     <p class="content__container__text">... just another</p>
@@ -24,7 +27,10 @@
   id="test"
   [ngClass]="{ D4in: showBricks, D4out: !showBricks }"
 >
-  <div id="textarea">
+  <div
+    id="textarea"
+    [@showHide]="{ value: showBricks ? 'show' : 'hide', params: { delay: 7 } }"
+  >
     <div
       *ngFor="let text of textInD4"
       id="text"

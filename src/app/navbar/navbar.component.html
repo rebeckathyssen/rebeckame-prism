@@ -1,0 +1,10 @@
+<!-- Navbar -->
+<div
+  id="navBar"
+  [@showHide]="{ value: valueInc ? 'show' : 'hide', params: { delay: 0 } }"
+>
+  <div class="element" (click)="route('/home', false)">home</div>
+  <div class="element" (click)="route('/about', false)">about</div>
+  <div class="element">projects</div>
+  <div class="element">follow</div>
+</div>

@@ -1,0 +1,28 @@
+#navBar {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  animation: dropdown 2s forwards;
+}
+
+.element {
+  //margin: 20px 50px 20px 50px;
+  margin-top: 1%;
+  margin-bottom: 1.2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  color: #ebdef756;
+  font-weight: 400;
+  font-size: 1.2vw;
+  letter-spacing: 3px;
+  z-index: 1;
+  transition: all 2s ease-in-out;
+}
+
+.element:hover {
+  color: #ebdef7;
+  cursor: pointer;
+}
+
+@keyframes dropdown {
+}
